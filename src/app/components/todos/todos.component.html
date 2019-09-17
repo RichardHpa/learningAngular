@@ -1,0 +1,7 @@
+<!-- This is looping over the todos array which we created in the ts file -->
+<!-- <ul *ngFor="let todo of todos">
+    <li>{{ todo.title }}</li>
+</ul> -->
+
+<app-todo-item *ngFor="let todo of todos" [todo]="todo">
+</app-todo-item>

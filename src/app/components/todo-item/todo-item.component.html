@@ -1,0 +1,12 @@
+<!--
+    [ngClass] is used to call the setClasses function on the ts file.
+    depending on if the object is true or false, it will either include the class
+    or not
+ -->
+<div [ngClass]="setClasses()">
+    <p>
+        <input type="checkbox" name="" value="" />
+        {{ todo.title }}
+        <button class="del">X</button>
+    </p>
+</div>
