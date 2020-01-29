@@ -19,7 +19,10 @@ export class TodosComponent implements OnInit {
 
   // this is similar to componentDidMount with react
   ngOnInit() {
-      this.todos = this.todoService.getTodos();
+      // this.todos = this.todoService.getTodos();
+      this.todoService.getTodos().subscribe(todos => {
+          this.todos = todos;
+      });
   }
 
 }
