@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TodoService } from '../../services/todo.service';
+
 import { Todo } from '../../models/Todo';
 
 // Whatever the selector name is, thats what we use to call it in the html
@@ -13,27 +15,11 @@ export class TodosComponent implements OnInit {
     todos:Todo[];
 
 
-  constructor() { }
+  constructor(private todoService:TodoService) { }
 
   // this is similar to componentDidMount with react
   ngOnInit() {
-      this.todos = [
-          {
-              id: 1,
-              title: 'To Do Item 1',
-              completed: false
-          },
-          {
-              id: 2,
-              title: 'To Do Item 2',
-              completed: true
-          },
-          {
-              id: 3,
-              title: 'To Do Item 3',
-              completed: false
-          }
-      ]
+      this.todos = this.todoService.getTodos();
   }
 
 }

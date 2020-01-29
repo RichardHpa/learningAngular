@@ -283,3 +283,8 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+.appContainer{
+    width: 600px;
+    margin: 0 auto;
+}
