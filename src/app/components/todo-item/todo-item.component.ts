@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 // allow us to use the Todo's model in the component
 import { TodoService } from '../../services/todo.service';
 import { Todo } from 'src/app/models/Todo';
@@ -13,6 +13,7 @@ export class TodoItemComponent implements OnInit {
     // This allows the component to accept an 'input value'
     // The input is [todo]="todo" which is on the ts file
     @Input() todo: Todo;
+    @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
 
     constructor(private todoService:TodoService) { }
 
@@ -38,6 +39,6 @@ export class TodoItemComponent implements OnInit {
     }
 
     onDelete(todo){
-        console.log('delete');
+        this.deleteTodo.emit(todo);
     }
 }
